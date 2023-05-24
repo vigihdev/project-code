@@ -1,0 +1,41 @@
+{
+    "name": "thrubus/project-code",
+    "description": "Project Php Vs Code",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "vscomposer\\": "src/vscomposer/src/",
+            "textDocument\\": "src/text-document/src/",
+            "vsReflection\\": "src/vsreflection/src/",
+            "helpers\\": "src/helpers/src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dobrak",
+            "email": "vigihdev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "webmozart/glob": "4.7.x-dev",
+        "webmozart/path-util": "^2.3",
+        "sabre/uri": "dev-master",
+        "sabre/event": "dev-master",
+        "phpdocumentor/reflection-docblock": "5.x-dev",
+        "spatie/regex": "dev-main"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.6.x-dev"
+    },
+    "config": {
+        "process-timeout":0
+    },
+    "scripts": {
+        "test": [
+            "phpunit src/helpers/tests/HelperTest.php",
+            "phpunit src/vscomposer/tests/VscomposerTest.php"
+        ],
+        "server": "php -S localhost:8000 ./vendor/bin/server.php --timeout=0"
+    }
+}
